@@ -1,0 +1,107 @@
+body {
+    background-color: antiquewhite;
+}
+
+.relative {
+    height: 150px;
+    width: 600px;
+    background-color: brown;
+    position: relative;
+}
+
+.azul {
+    height: 100px;
+    width: 100px;
+    display: none;
+    background-color: blue;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.gris {
+    height: 150px;
+    width: 600px;
+    background-color: gray;
+}
+
+.sticky {
+    height: 150px;
+    width: 600px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+}
+
+.fixed {
+    height: 150px;
+    width: 600px;
+    background-color: chartreuse;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: absolute;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+        background-color: blue;
+    }
+
+    25% {
+        opacity: 1;
+        background-color: yellow;
+    }
+
+    50% {
+        opacity: 0.5;
+        background-color: black;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move {
+    0% {
+      left: 0;
+      top: 0;
+    }
+    25% {
+      left: 50%;
+      top: 0;
+    }
+    50% {
+      left: 50%;
+      top: 50%;
+    }
+    75% {
+      left: 0;
+      top: 50%;
+    }
+    100% {
+      left: 0;
+      top: 0;
+    }
+  }
