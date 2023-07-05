@@ -60,21 +60,60 @@
 //   console.log("El precio es mayor a 100")
 // }
 
-const usuarioLogueado = true
+// const usuarioLogueado = true
 
-const edadDelUsuario = 16
+// const edadDelUsuario = 16
 
-if (usuarioLogueado) {
-  if (edadDelUsuario >= 18) {
-    console.log("Podes pasar al boliche")
-  } else {
-    console.log("No podes pasar al boliche porque sos menor")
-  }
-}
+// if (usuarioLogueado) {
+//   if (edadDelUsuario >= 18) {
+//     console.log("Podes pasar al boliche")
+//   } else {
+//     console.log("No podes pasar al boliche porque sos menor")
+//   }
+// }
 
-// Esto es lo mismo pero mas prolijo y mas corto
-if (usuarioLogueado && edadDelUsuario >= 18) {
-  console.log("Podes pasar al boliche")
-} else {
-  console.log("No podes pasar al boliche porque sos menor")
-}
+// // Esto es lo mismo pero mas prolijo y mas corto
+// if (usuarioLogueado && edadDelUsuario >= 18) {
+//   console.log("Podes pasar al boliche")
+// } else {
+//   console.log("No podes pasar al boliche porque sos menor")
+// }
+
+// =================================================
+/* crear 4 algoritmos que solicite al usuario uno o mas valores ingresados por prompt(), 
+compare las entradas y en funcion de ciertas condiciones muestre por consola o alert() el 
+resultado segun los valores ingresados y las condiciones cumplidas */
+
+// const valor1 = prompt("Ingrese el primer valor: ")
+// const valor2 = prompt("Ingrese el segundo valor: ")
+// const valor3 = prompt("Ingrese el tercer valor: ")
+// const valor4 = prompt("Ingrese el cuarto valor: ")
+
+// if (valor1 === valor2 || valor3 === valor4) {
+//   console.log("Los valores son iguales")
+// } else {
+//   console.log("Los valores no son iguales")
+// }
+
+// if (Number(valor3) + Number(valor1) < 10) {
+//   console.log("La suma de " + valor3 + " + " + valor1 + " " + "es menor a 10")
+// } else {
+//   console.log(
+//     "La suma de " + valor3 + " + " + valor1 + " " + "no es menor a 10"
+//   )
+// }
+
+// if (valor1 != 15 && valor2 != 15 && valor3 != 15 && valor4 != 15) {
+//   console.log("Los valores son distintos a 15")
+// } else {
+//   console.log("Los valores no son distintos.")
+// }
+
+// //Ya no sabía que más inventar :)
+// if (Number(valor1) >= Number(valor2)) {
+//   console.log(valor1 + " es mayor o igual a " + valor2)
+// } else if (Number(valor3) <= Number(valor4)) {
+//   console.log(valor3 + " es menor o igual a" + valor4)
+// } else {
+//   console.log("No se cumple la condición en ninguno de los valores")
+// }
