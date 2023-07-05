@@ -102,6 +102,9 @@ while (drinkCoffee < 10) {
   console.log('Café')
 }
 
+¿Cuántas veces saldrá en consola la palabra 'Café'?
+5, 6, o 7? Porque? No vale ejecutar el codigo, hay que razonarlo.
+
 ============================
 
 Ejercicio de suma de números pares:
