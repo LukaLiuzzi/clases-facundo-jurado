@@ -110,6 +110,23 @@ while (drinkCoffee < 10) {
 Ejercicio de suma de números pares:
 Escribe un programa que calcule la suma de todos los números pares del 1 al 100 
 utilizando un bucle while. Muestra el resultado al final.
-Ejemplo: 1 + 2 + 3 + 4 + 5 + ... + 100 = 2550
+Ejemplo: 2 + 4 + 6 + 10 ... + 100 = 2550
 
 */
+
+// let numeroInicial = 1
+// let numeroFinal = 100
+
+// while (numeroInicial <= numeroFinal) {
+//   console.log("Tabla de multiplicar del ", numeroInicial)
+
+//   let numeroMultiplicador = 1
+//   while (numeroMultiplicador <= 10) {
+//     let resultado = numeroInicial * numeroMultiplicador
+//     console.log(numeroInicial, "x", numeroMultiplicador, "=", resultado)
+//     numeroMultiplicador = numeroMultiplicador + 1
+//   }
+
+//   console.log("") // Salto de linea
+//   numeroInicial = numeroInicial + 1
+// }
