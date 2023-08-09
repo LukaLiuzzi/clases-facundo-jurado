@@ -1,26 +1,35 @@
 // Simulador de cajero automatico: Promt. COnsultar, retirar, depositar, salir
 
-// Funcion principal
 function cajeroAutomatico() {
   const saldo = 1000
 
   login()
 
-  let opcion = Number(mostrarMenu())
-
-  switch (opcion) {
-    case 1:
-      consultarSaldo(saldo)
-      break
-    case 2:
-      retirarDinero(saldo)
-      break
-    case 3:
-      depositarDinero(saldo)
-      break
-    case 4:
-      return
-  }
+  let opcion
+  do {
+    opcion = Number(mostrarMenu())
+    if (isNaN(opcion)) {
+      alert("Ingresá solo números")
+      mostrarMenu()
+    } else {
+      opcion = Number(opcion)
+      switch (opcion) {
+        case 1:
+          consultarSaldo(saldo)
+          mostrarMenu()
+        case 2:
+          retirarDinero(saldo)
+          mostrarMenu()
+        case 3:
+          depositarDinero(saldo)
+          mostrarMenu()
+        case 4:
+          break
+        default:
+          alert("Opción incorrecta, vuelve a intentarlo")
+      }
+    }
+  } while (opcion !== 1 && opcion !== 2 && opcion !== 3 && opcion !== 4)
 }
 
 cajeroAutomatico()
@@ -43,8 +52,10 @@ function login() {
 }
 
 function mostrarMenu() {
-  const respuestaUsuario = prompt(
-    "1) Consultar saldo \n 2) Retirar dinero \n 3) Depositar dinero \n 4) Salir"
+  const respuestaUsuario = Number(
+    prompt(
+      "1) Consultar saldo \n 2) Retirar dinero \n 3) Depositar dinero \n 4) Salir"
+    )
   )
   return respuestaUsuario
 }
@@ -57,10 +68,12 @@ function retirarDinero(saldo) {
   let retirar
   do {
     retirar = prompt("Ingrese el monto a retirar: ")
+    if (retirar === null) return
+
     if (!isNaN(retirar) && +retirar <= saldo) {
       // saldo - retirar // Hacemos una resta para actualizar el saldo pero no lo guardamos en ningun lado
       saldo -= retirar // Esta es la forma correcta de actualizar el saldo
-      alert("Retiro exitoso")
+      alert("Retiro exitoso, su saldo es de " + saldo)
       break
     } else {
       alert("No tenes saldo disponible, intenta con otro monto")
@@ -75,9 +88,10 @@ function depositarDinero(saldo) {
   let deposito
 
   do {
-    deposito = Number(prompt("¿Cuánto quieres depositar?"))
+    deposito = prompt("¿Cuánto quieres depositar?")
+    if (deposito === null) return
     if (!isNaN(deposito)) {
-      saldo += deposito
+      saldo += Number(deposito)
       alert("Deposito exitoso. El nuevo saldo es $" + saldo)
       break
     } else {
