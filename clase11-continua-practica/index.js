@@ -16,10 +16,18 @@ const PRODUCTO_BUZO = 4
 const PRECIO_BUZO = 1500
 
 function simuladorTienda() {
+  let carrito = "Usted compro: "
+  let totalCompra = 0
+
+  // Hacer switch con validaciones - (ver switch de la practica anterior)
   menu()
   verProductos()
   comprarProductos()
+  SumatoriaDeProductosAlCarrito()
+  calcularTotalCompra()
 }
+
+simuladorTienda()
 
 function menu() {
   const rtaUsuario = prompt(
@@ -47,6 +55,8 @@ function comprarProductos() {
       "Selecciona el producto que queres comprar: \n 1) Camiseta \n 2) Jean \n 3) Zapatilla \n 4) Buzo \n 5) Seleccionar todos"
     )
   )
+
+  // Arreglar este switch (Rehacerlo de nuevo)
   switch (producto) {
     case 1:
       PRODUCTO_CAMISETA
@@ -66,4 +76,28 @@ function comprarProductos() {
   }
 }
 
-function totalCompra() {}
+function SumatoriaDeProductosAlCarrito(carrito, producto, nombreProducto) {
+  // Recibimos por parametros el valor viejo del carrito y el valor del producto que se quiere agregar ➡️
+
+  // Hacemos las validaciones necesarias
+  if (producto >= 1 || producto <= 4) {
+    carrito = carrito + "\n" + nombreProducto
+  }
+
+  return carrito
+  // Devolvemos el valor nuevo del carrito
+}
+
+function calcularTotalCompra(totalCompra, producto, precioProducto) {
+  // Recibimos por parametros el valor viejo del totalCompra y el valor del producto que se quiere agregar ➡️
+
+  // Hacemos las validaciones necesarias
+  if (producto >= 1 || producto <= 4) {
+    totalCompra = totalCompra + precioProducto
+  }
+
+  // Devolvemos el valor nuevo del totalCompra
+  return totalCompra
+}
+
+// Para la clase que viene ver este video: https://www.youtube.com/watch?v=e3EyqGnb6XM&ab_channel=CodeHive
