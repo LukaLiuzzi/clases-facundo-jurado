@@ -20,11 +20,28 @@ function simuladorTienda() {
   let totalCompra = 0
 
   // Hacer switch con validaciones - (ver switch de la practica anterior)
-  menu()
-  verProductos()
-  comprarProductos()
-  SumatoriaDeProductosAlCarrito()
-  calcularTotalCompra()
+
+  let menuOpcion
+
+  do {
+    menuOpcion = Number(menu())
+    switch (menuOpcion) {
+      case 1:
+        verProductos()
+        break
+      case 2:
+        comprarProductos()
+        break
+      case 3:
+        SumatoriaDeProductosAlCarrito() // Faltan los parametros
+        calcularTotalCompra() // Faltan los parametros
+        break
+      case 4:
+        break
+    }
+  } while (
+    menuOpcion !== 4 // Si el usuario ingresa 4, sale del bucle
+  )
 }
 
 simuladorTienda()
@@ -33,18 +50,33 @@ function menu() {
   const rtaUsuario = prompt(
     "1) Ver productos \n 2) Comprar producto \n 3) Finalizar compra \n 4) Salir"
   )
-  return rtaUsuario
+
+  if (!isNaN(rtaUsuario) && rtaUsuario >= 1 && rtaUsuario <= 4) {
+    // Si es numero y esta entre 1 y 4 => Si es un numero me devuelve false la funcion isNaN y le invertimos el valor con el ! (not)
+    return rtaUsuario
+  } else {
+    alert("Error, ingrese una opción valida")
+    menu()
+  }
 }
 
 function verProductos() {
   alert(
     "Productos: \n Camiseta" +
+      " " +
+      "$" +
       PRECIO_CAMISETA +
       "\n Jean" +
+      " " +
+      "$" +
       PRECIO_JEAN +
       "\n Zapatilla " +
+      " " +
+      "$" +
       PRECIO_ZAPATILLA +
       "\n Buzo" +
+      " " +
+      "$" +
       PRECIO_BUZO
   )
 }
@@ -56,22 +88,18 @@ function comprarProductos() {
     )
   )
 
-  // Arreglar este switch (Rehacerlo de nuevo)
   switch (producto) {
     case 1:
-      PRODUCTO_CAMISETA
+      alert("Se agrego al carrito: Camiseta " + "$" + PRECIO_CAMISETA)
       break
     case 2:
-      PRODUCTO_JEAN
+      alert("Se agrego al carrito: Jean " + "$" + PRECIO_JEAN)
       break
     case 3:
-      PRODUCTO_ZAPATILLA
+      alert("Se agrego al carrito: Zapatilla " + "$" + PRECIO_ZAPATILLA)
       break
     case 4:
-      PRODUCTO_BUZO
-      break
-    case 5:
-      PRODUCTO_CAMISETA + PRODUCTO_JEAN + PRODUCTO_ZAPATILLA + PRODUCTO_BUZO
+      alert("Se agrego al carrito: Buzo " + "$" + PRECIO_BUZO)
       break
   }
 }
@@ -99,5 +127,3 @@ function calcularTotalCompra(totalCompra, producto, precioProducto) {
   // Devolvemos el valor nuevo del totalCompra
   return totalCompra
 }
-
-// Para la clase que viene ver este video: https://www.youtube.com/watch?v=e3EyqGnb6XM&ab_channel=CodeHive
