@@ -97,3 +97,12 @@ function procesarPedido(pedido) {
 }
 
 */
+
+const nombreUsuario = "Pablo"
+const pedido = [nombreUsuario, "Fideos con salsa", "Ensalada"]
+
+function procesarPedido(pedido) {
+  pedido.shift() && pedido.unshift("Bebida") && pedido.push(nombreUsuario)
+  return pedido
+}
+console.log(procesarPedido(pedido))
