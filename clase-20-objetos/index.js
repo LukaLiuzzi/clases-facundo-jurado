@@ -43,7 +43,7 @@ console.log(persona["direccion"]["pais"])
 persona.caminar()
 persona["saltar"]()
 
-// Agregar propiedades a un objeto o modifiar las existentes
+// Agregar propiedades a un objeto o modificar las existentes
 console.clear()
 const auto = {
   marca: "Ford",
@@ -169,3 +169,30 @@ Iterar sobre propiedades: Crea una función que acepte un objeto como parámetro
 
 Métodos en objetos: Crea un objeto que represente un coche con propiedades como marca, modelo y un método llamado arrancar que imprima en la consola un mensaje como "El coche [marca] [modelo] ha arrancado".
  */
+
+// Desestructuracion
+const animal = {
+  nombre: "Toby",
+  especie: "perro",
+  edad: 5,
+  vacunas: {
+    antirrabica: true,
+    antipulgas: true,
+  },
+  ladrar: () => {
+    console.log("Guau guau")
+  },
+}
+
+const {
+  especie,
+  edad: edadDelAnimal,
+  ladrar,
+  nombre: nombreDelAnimal,
+  vacunas: { antirrabica },
+} = animal
+
+console.log(especie) // perro
+console.log(edadDelAnimal) // 5
+console.log(nombreDelAnimal) // Toby
+console.log(antirrabica) // true
